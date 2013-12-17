@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
     sudo -u vagrant mkdir -p /home/vagrant/go/{src,bin,pkg}
     sudo -u vagrant mkdir -p /home/vagrant/repos
     sudo -u vagrant sh -c "echo 'export GOPATH=/home/vagrant/go' >> /home/vagrant/.bashrc"
-    sudo -u vagrant sh -c "echo 'export PATH=$PATH:home/vagrant/go/bin' >> /home/vagrant/.bashrc"
+    sudo -u vagrant sh -c "echo 'export PATH=$PATH:/home/vagrant/go/bin' >> /home/vagrant/.bashrc"
 
     # install Docker
     wget -qO - https://get.docker.io/gpg | apt-key add -

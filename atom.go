@@ -2,6 +2,7 @@ package main
 
 import (
   linuxproc "github.com/c9s/goprocinfo/linux"
+  etcd "github.com/coreos/go-etcd/etcd"
   "os/exec"
   "strconv"
   "log"
@@ -42,7 +43,9 @@ func main(){
   machine := MachineInfo()
 
   log.Println("Machine Info> ", machine)
-
   log.Printf("CPU Core: %s", machine.cpus)
   log.Println("Meminfo: ", machine.memory)
+
+  etcd := etcd.NewClient(nil)
+  log.Println("ETCD: ", etcd)
 }
