@@ -47,5 +47,7 @@ func main(){
   log.Println("Meminfo: ", machine.memory)
 
   etcd := etcd.NewClient(nil)
-  log.Println("ETCD: ", etcd)
+  etcd.SetDir("/my_org/my_app", 2000)
+  etcd.Set("/my_org/my_app/config", "{'ip_address': 127.0.0.1, 'port': 8181}", 10000)
+
 }
